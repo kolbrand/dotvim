@@ -9,8 +9,8 @@ let mapleader =","
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
 "Linux and windows users (using the control key)
-"	map <leader>tab> gt
-"	map <leader>S-tab> gT
+	map gl gt
+	map gh gT
 	map <leader>1 1gt
 	map <leader>2 2gt
 	map <leader>3 3gt
@@ -22,11 +22,13 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 	map <leader>9 9gt
 	map <leader>0 :tablast<CR>
 	map <leader>n :tabnew<CR>
+	map <leader>t :NERDTreeToggle<CR>
+	map <leader>w :tabclose<CR>
 
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+	map <C-h> <C-w>h
+	map <C-j> <C-w>j
+	map <C-k> <C-w>k
+	map <C-l> <C-w>l
 
 
 
@@ -42,6 +44,7 @@ map <C-l> <C-w>l
 	highlight NonText guifg=#4a4a59
 	highlight SpecialKey guifg=#4a4a59
 
+colorscheme wombat
 :set list
 :set number
 
