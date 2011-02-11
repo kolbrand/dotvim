@@ -30,10 +30,13 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
+	:filetype plugin on
+	set nocompatible
+	filetype on
+	filetype plugin on
 
-
-
-
+au BufRead *.php set ft=php.html
+au BufNewFile *.php set ft=php.html
 
 
 
