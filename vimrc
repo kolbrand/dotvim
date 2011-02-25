@@ -43,11 +43,49 @@ au BufNewFile *.php set ft=php.html
 " Use the same symbols as TextMate for tabstops and EOLs
 	set listchars=tab:▸\ ,eol:¬
 
-"Invisible character coloss:s
-	highlight NonText guifg=#4a4a59
-	highlight SpecialKey guifg=#4a4a59
 
-colorscheme wombat
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+	if exists("*synstack")
+		echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+	endif
+endfunc
+           
+
+colorscheme desert
 :set list
 :set number
 
+
+" set tabs length
+:set tabstop=4
+:set shiftwidth=4
+
+" GUI Settings {
+if has("gui_running")
+	" Basics {
+		set columns=180 " perfect size for me
+		set guioptions=ce 
+		"              ||
+		"              |+-- use simple dialogs rather than pop-ups
+		"              +  use GUI tabs, not console style tabs
+		set lines=55 " perfect size for me
+		set mousehide " hide the mouse cursor when typing
+	" }
+	
+	" Font Switching Binds {
+		map <F8> <ESC>:set guifont=Consolas:h8<CR>
+		map <F9> <ESC>:set guifont=Consolas:h10<CR>
+		map <F10> <ESC>:set guifont=Consolas:h12<CR>
+		map <F11> <ESC>:set guifont=Consolas:h16<CR>
+		map <F12> <ESC>:set guifont=Consolas:h20<CR>
+	" }
+else
+	set t_Co=256
+endif
+" }
+
+
+"buffer
+set hidden
